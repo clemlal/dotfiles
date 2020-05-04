@@ -1,0 +1,34 @@
+# This is a comment
+[global_config]
+focus = system
+
+[keybindings]
+full_screen = <Ctrl><Shift>F11
+
+[profiles]
+[[default]]
+font = Fixed 10
+background_color = "#333333" # A comment
+foreground_color = "#ffffff" # Note that hex colour values must be quoted
+background_darkness = 0.90
+background_type = transparent
+scrollback_lines = '500' #More comment. Single quotes are valid too
+cursor_blink = True
+custom_command = "echo \"foo#bar\"" #Final comment - this will work as expected.
+
+color0 = "#4d4d4d"
+color8 = "#545454"
+color1 = "#249ce7"
+color9 = "#ff5555"
+color2 = "#98fb98"
+color10 = "#55ff55"
+color3 = "#f0e68c"
+color11 = "#ffff55"
+color4 = "#cd853f"
+color12 = "#87ceff"
+color5 = "#ffdead"
+color13 = "#ff55ff"
+color6 = "#ffa0a0"
+color14 = "#ffd700"
+color7 = "#f5deb3"
+color15 = "#ffffff"
