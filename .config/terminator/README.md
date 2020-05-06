@@ -7,7 +7,7 @@ The key to use actions is CTRL with the possible use to Shift for other actions.
 
 ## Bindings 
 
-### Window Managent
+### Window Management
 
 * Split cell vertically : CTRL + Return
 * Split cell horizontally : CTRL + Shift + Return
