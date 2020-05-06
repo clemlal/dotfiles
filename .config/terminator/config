@@ -1,0 +1,66 @@
+[global_config]
+  focus = system
+  suppress_multiple_term_dialog = True
+  borderless = False
+  scroll_tabbar = False
+  close_button_on_tab = False
+[keybindings]
+  copy = <Ctrl><Shift>C
+  paste = <Ctrl><Shift>V
+  full_screen = <Ctrl><Shift>F
+  zoom_in = <Ctrl>plus
+  zoom_out = <Ctrl>minus
+  zoom_normal =
+  new_tab = <Ctrl>T
+  cycle_next = 
+  cycle_prev = 
+  go_prev =
+  next_tab = <Ctrl>N
+  prev_tab = <Ctrl>P
+  move_tab_right = <Ctrl><Shift>N
+  move_tab_left = <Ctrl><Shift>P
+  go_up = <Ctrl>K
+  go_down = <Ctrl>J
+  go_left = <Ctrl>H
+  go_right = <Ctrl>L
+  split_horiz = <Ctrl><Shift>Return
+  split_vert = <Ctrl>Return
+  close_term = <Ctrl>Q
+  resize_up = <Ctrl>I
+  resize_down = <Ctrl>U
+  resize_left = <Ctrl>Y
+  resize_right = <Ctrl>O
+  rotate_cw = <Ctrl><Shift>L
+  rotate_ccw = <Ctrl><Shift>H
+  toggle_scrollbar = 
+  search = <Ctrl><Shift>S
+  toggle_zoom =
+  scaled_zoom = 
+  reset = 
+  reser_clear =
+  hide_window = 
+  group_all = 
+  ungroup_all =
+  group_tab = 
+  ungroup_tab =
+  new_window =
+  new_terminator =
+[profiles]
+  [[default]]
+    background_color = "#333333"
+    background_darkness = 0.9
+    background_type = transparent
+    font = Fixed 10
+    foreground_color = "#ffffff"
+    custom_command = 'echo \"foo#bar\"'
+    scrollbar_position = disabled
+    show_titlebar = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
