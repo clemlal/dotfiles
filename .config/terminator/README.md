@@ -3,25 +3,24 @@
 ## General Spirit 
 
 The theme is set to match the dark Materia gtk theme. Keybindings are set to match the Vim ones.
-The key to use actions is CTRL with the possible use to Shift for other actions. CTRL only is used only for basic window management actions. CTRL + Shift is used when possible because it avoids double assignation.
+The key to use actions are CTRL +Shift with the possible use to Alt for other actions. 
 
 ## Bindings 
 
 ### Window Management
 
-* Split cell vertically : CTRL + Return
-* Split cell horizontally : CTRL + Shift + Return
-* Close cell : CTRL + q 
-* Move one cell Left/Right/Up/Down : CTRL + {H, L, K, J} 
-* Rotate cells Clockwise / Counter Clockwise : CTRL + Shift + {L, H}
-* Resize cell Left/Right/Up/Down : CTRL + {Y, O, I, U}
-* Zoom In/Out : CTRL + {+, -}
+* Split cell vertically : CTRL + Shift + Return
+* Split cell horizontally : CTRL + Shift + Alt + Return
+* Close cell : CTRL + Shift + w 
+* Move one cell Left/Right/Up/Down : CTRL + Shift + {H, L, K, J} 
+* Resize cell Left/Right/Up/Down : CTRL + Shift + {Y, O, I, U}
+* Zoom In/Out : CTRL + Shift + Alt + {+, -}
+* Zoom on a specific cell : CTRL + Shift + Z
 
 ### Tab Management 
 
-* New tab : CTRL + T 
-* Move to Next/Previous tab : CRTL + {N, P} 
-* Swap current tab with Next/Previous tab : CTRL + Shift + {N, O} 
+* New tab : CTRL + Shift + T 
+* Move to Next/Previous tab : CRTL + Shift + {N, P} 
 
 ### Other 
 
