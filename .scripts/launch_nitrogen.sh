@@ -1,0 +1,2 @@
+killall nitrogen
+nitrogen --restore &

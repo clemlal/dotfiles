@@ -6,6 +6,10 @@
 super + Return
     terminator
 
+# floating terminal emulator
+super + shift + Return
+    bspc rule -a Terminator -o state=floating && terminator
+
 # program launcher
 super + d
 	rofi -show drun
@@ -16,14 +20,20 @@ super + Escape
 
 # volume keybindings
 
-XF86AudioRaiseVolume
-	amixer -q sset Master,0 5+ unmute
-
-XF86AudioLowerVolume
-	amixer -q sset Master,0 5- unmute
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-}; pkill -RTMIN+10 blocks
 
 XF86AudioMute
-	amixer -q sset Master,0 toggle
+	amixer sset Master toggle; pkill -RTMIN+10 blocks
+
+XF86Audio{Next,Prev}
+	mpc {next,prev}
+
+XF86Audio{Pause,Play,Stop}
+	mpc {pause,play,stop}
+
+XF86Audio{Rewind,Forward}
+	mpc seek {-,+}10
 
 #
 # bspwm hotkeys
@@ -86,10 +96,10 @@ super + {_,shift + }{h,j,k,l}
 #	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-#super + {o,i}
-#	bspc wm -h off; \
-#	bspc node {older,newer} -f; \
-#	bspc wm -h on
+super + {_,shift} + Tab
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
@@ -134,9 +144,17 @@ super + {Left,Down,Up,Right}
 
 # APPLICATIONS
 
+#Power menu
+super + F1
+    bspc rule -a Terminator -o state=floating && (terminator -x bash ~/.scripts/power.sh)
+
 #Screen saver
 super + F2
     bash ~/.scripts/blurlock.sh
+
+#Screen saver with suspend
+super + shift + F2
+    bash ~/.scripts/blurlock_suspend.sh
 
 #Ranger
 super + F5
@@ -146,6 +164,7 @@ super + F5
 super + shift + F5
     bspc rule -a Pcmanfm -o state=floating && pcmanfm
 
+#htop
 super + F6
     bspc rule -a Terminator -o state=floating && (terminator -e htop)
 
@@ -153,9 +172,21 @@ super + F6
 super + F9
     bspc rule -a Lxappearance -o state=floating && lxappearance
 
+#Nitrogen
+super + shift + F9
+    bspc rule -a Nitrogen -o state=floating && nitrogen
+
 #Arandr
 super + F10
-    bspc rule -a Arandr -o state=floating && arandr
+    bspc rule -a Arandr -o state=floating && arandr && bash ~/.scripts/launch_nitrogen.sh && bash ~/.scripts/launch_polybar.sh
+
+#Network Manager TUI
+super + F11
+    bspc rule -a Terminator -o state=floating && (terminator -e nmtui)
+
+#Network Manager GUI
+super + shift + F11
+    bspc rule -a Nm-connection-editor -o sate=floating && nm-connection-editor
 
 #Open Pavucontrol
 super + shift + F12
